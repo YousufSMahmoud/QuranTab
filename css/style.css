@@ -1,0 +1,372 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media only screen and (max-width: 30em) {
+  html {
+    font-size: 0.6rem;
+  }
+}
+
+h1 {
+  color: #000;
+  font-size: 4.0625rem;
+  font-weight: 600;
+}
+
+.body {
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 56.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+@media only screen and (max-width: 30em) {
+  .container {
+    gap: 1.25rem;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1.25rem;
+  font-family: "Rubic", sans-serif;
+}
+
+.nav__lists {
+  display: flex;
+  justify-content: end;
+}
+
+.nav__list {
+  padding: 1rem;
+}
+
+.nav__start {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav__link:hover {
+  color: #ff0000;
+}
+
+.logo {
+  width: 2.5rem;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+}
+@media only screen and (max-width: 30em) {
+  .section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.section__primary__title {
+  font-size: 2.625rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section__button {
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #5368df;
+  text-decoration: none;
+  text-align: center;
+}
+
+.section__title {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: #9194a1;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 30em) {
+  .section__image {
+    order: -1;
+  }
+}
+
+.section__buttons {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.section__image-img {
+  max-width: 100%;
+}
+
+.download {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.section__download-p {
+  justify-items: center;
+  text-align: center;
+  max-width: 50%;
+  line-height: 1.2;
+  color: #9194a1;
+}
+@media only screen and (max-width: 30em) {
+  .section__download-p {
+    max-width: 100%;
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+}
+@media only screen and (max-width: 30em) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 0.25rem 0.5rem 0.125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 16.25rem;
+  width: 15.25rem;
+  padding: 2.5rem 1.25rem 1.25rem;
+}
+@media only screen and (max-width: 30em) {
+  .card {
+    width: 100%;
+  }
+}
+
+.card__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.card__button {
+  padding: 0.75rem 1.5rem;
+  margin-top: auto;
+  align-self: stretch;
+}
+
+.card__image {
+  display: inline-block;
+  width: 3.75rem;
+  margin-bottom: 0.625rem;
+}
+
+.footer__end {
+  margin-left: auto;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f6f6f6;
+  padding: 1.25rem 0;
+  font-family: "Rubik", sans-serif;
+}
+
+.footer__title {
+  font-size: 1rems;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.footer::after {
+  content: "";
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  background-color: #252b46;
+  z-index: -1;
+}/*# sourceMappingURL=style.css.map */
