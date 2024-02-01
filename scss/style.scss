@@ -8,6 +8,10 @@ html {
   @media only screen and (max-width: 30em) {
     font-size: 0.6rem;
   }
+
+  @media only screen and (max-width: 70em) {
+    font-size: 0.8rem;
+  }
 }
 h1 {
   color: $color-black;
@@ -23,6 +27,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: calc($gutter * 4);
+  padding: 0 $gutter;
 
   @media only screen and (max-width: 30em) {
     gap: $gutter;
@@ -105,6 +110,7 @@ h1 {
 }
 
 .section__image {
+  display: flex;
   @media only screen and (max-width: 30em) {
     order: -1;
   }
@@ -121,6 +127,9 @@ h1 {
 .download {
   grid-template-columns: 1fr;
   justify-items: center;
+  @media only screen and (max-width: 30em) {
+    justify-items: baseline;
+  }
 }
 .section__download-p {
   justify-items: center;
@@ -166,16 +175,81 @@ h1 {
 }
 
 .card__button {
+  position: relative;
   padding: 0.75rem 1.5rem;
   margin-top: auto;
   align-self: stretch;
 }
 
+.card__button::after {
+  content: "";
+  position: absolute;
+  height: 1rem;
+  background-image: url(./images/bg-dots.svg);
+}
 .card__image {
   display: inline-block;
   width: 3.75rem;
   margin-bottom: calc($gutter/2);
 }
+
+.faq {
+  grid-template-columns: 1fr;
+  justify-items: center;
+
+  &__list {
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    position: relative;
+
+    &:not(:last-of-type) {
+      // border-bottom: 1px solid black;
+    }
+  }
+  &__arrow {
+    width: 0.75rem;
+
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: calc($gutter);
+    transition: transform $transition-timing ease-in-out;
+  }
+  &__input {
+    display: none;
+    &:checked ~ .faq__arrow {
+      transform: rotate(180deg);
+      background-color: yellow;
+    }
+    &:checked ~ .faq__answer {
+      opacity: 1;
+      transition: all $transition-timing ease-in-out;
+      max-height: 30rem;
+      padding-top: $gutter;
+    }
+  }
+  &__questions {
+    display: block;
+    font-size: 1rem;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+  }
+  &__answer {
+    font-size: 0.9rem;
+    font-weight: $font-weight-regular;
+    opacity: 0;
+    max-height: 0.1rem;
+    overflow: hidden;
+    line-height: 1.3;
+  }
+}
+
+.faq__lists {
+  max-width: 31.25rem;
+  border-top: 1px solid;
+  // border-bottom: 1px solid;
+}
+
 .footer__end {
   margin-left: auto;
 }
